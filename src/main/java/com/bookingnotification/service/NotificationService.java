@@ -74,6 +74,6 @@ public class NotificationService {
     }
 
     public UserPreference getUserPreference(String userId) {
-        return userPreferenceRepository.findByUserId(userId).get();
+        return userPreferenceRepository.findByUserId(userId).orElse(null);
     }
 }
