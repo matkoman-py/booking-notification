@@ -72,4 +72,8 @@ public class NotificationService {
     public UserPreference createOrUpdateUserPreference(UserPreference userPreference) {
         return userPreferenceRepository.save(userPreference);
     }
+
+    public UserPreference getUserPreference(String userId) {
+        return userPreferenceRepository.findByUserId(userId).get();
+    }
 }
