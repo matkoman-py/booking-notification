@@ -25,4 +25,9 @@ public class NotificationController {
     public ResponseEntity<UserPreference> createOrUpdateUserPreference(@RequestBody UserPreference userPreference) {
         return ResponseEntity.ok(notificationService.createOrUpdateUserPreference(userPreference));
     }
+
+    @GetMapping("/user-preferences/{userId}")
+    public ResponseEntity<UserPreference> getUserPreference(@PathVariable String userId) {
+        return ResponseEntity.ok(notificationService.getUserPreference(userId));
+    }
 }
